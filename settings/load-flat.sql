@@ -13,3 +13,4 @@ set mapreduce.input.fileinputformat.split.minsize.per.rack=240000000;
 set hive.stats.autogather=true;
 set hive.support.concurrency=false;
 set hive.txn.manager=org.apache.hadoop.hive.ql.lockmgr.DummyTxnManager;
+set tez.queue.name=zendesk_test;

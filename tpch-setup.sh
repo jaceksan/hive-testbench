@@ -51,7 +51,7 @@ hdfs dfs -mkdir -p ${DIR}
 hdfs dfs -ls ${DIR}/${SCALE}/lineitem > /dev/null
 if [ $? -ne 0 ]; then
 	echo "Generating data at scale factor $SCALE."
-	(cd tpch-gen; hadoop jar target/*.jar -d ${DIR}/${SCALE}/ -s ${SCALE})
+	(cd tpch-gen; hadoop jar target/*.jar -d ${DIR}/${SCALE}/ -s ${SCALE} -D tez.queue.name=zendesk_test)
 fi
 hdfs dfs -ls ${DIR}/${SCALE}/lineitem > /dev/null
 if [ $? -ne 0 ]; then
